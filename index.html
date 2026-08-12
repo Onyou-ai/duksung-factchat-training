@@ -93,7 +93,8 @@ header.site{
   max-width:920px;margin:0 auto;padding:14px 24px;
   display:flex;align-items:center;justify-content:space-between;gap:16px;
 }
-.brand{display:flex;align-items:baseline;gap:10px;text-decoration:none;}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.brand-logo{height:32px;width:auto;display:block;}
 .brand-univ{font-size:0.78rem;letter-spacing:0.06em;color:var(--ink-soft);font-weight:600;}
 .brand-name{font-family:var(--font-display);font-weight:900;font-size:1.15rem;color:var(--wine);letter-spacing:0.01em;}
 nav.links{display:flex;gap:22px;font-size:0.92rem;font-weight:600;}
@@ -116,12 +117,20 @@ nav.links a:hover{color:var(--wine);border-color:var(--wine);}
 
 /* ---------- Hero ---------- */
 .hero{
-  padding:64px 0 56px;
-  border-bottom:1px solid var(--rule);
+  background:#1B0F14;color:#F5E9EC;
+  border-radius:28px;
+  padding:56px 40px 48px;
+  margin:32px 0 56px;
+}
+@media(max-width:640px){
+  .hero{padding:40px 22px 32px;border-radius:20px;}
 }
 .eyebrow{
-  font-size:0.78rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;
-  color:var(--wine);margin:0 0 18px;
+  display:inline-flex;align-items:center;
+  border:1px solid rgba(245,233,236,0.22);border-radius:999px;
+  padding:6px 14px;
+  font-size:0.68rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;
+  color:#C9A9B3;margin:0 0 22px;
 }
 h1.headline{
   font-family:var(--font-body);
@@ -130,29 +139,29 @@ h1.headline{
   line-height:1.22;
   letter-spacing:-0.01em;
   margin:0 0 22px;
+  color:#fff;
   text-wrap:balance;
-  max-width:15ch;
+  max-width:16ch;
 }
-h1.headline .num{
+h1.headline .hl{
   font-family:var(--font-display);
   font-weight:900;
-  color:var(--wine);
-  font-variant-numeric:tabular-nums;
+  color:#F0709A;
 }
 p.lead{
-  font-size:1.1rem;color:var(--ink-soft);max-width:52ch;margin:0 0 34px;
+  font-size:1.1rem;color:#C9A9B3;max-width:52ch;margin:0 0 34px;
 }
 .stat-row{
   display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
-  background:var(--rule);border:1px solid var(--rule);border-radius:14px;overflow:hidden;
+  background:#3A2530;border:1px solid #3A2530;border-radius:14px;overflow:hidden;
   margin-bottom:34px;
 }
-.stat{background:var(--paper-raised);padding:18px 16px;}
+.stat{background:#241419;padding:18px 16px;}
 .stat b{
   display:block;font-family:var(--font-display);font-weight:900;
-  font-size:1.5rem;color:var(--wine);font-variant-numeric:tabular-nums;margin-bottom:4px;
+  font-size:1.5rem;color:#F0709A;font-variant-numeric:tabular-nums;margin-bottom:4px;
 }
-.stat span{font-size:0.82rem;color:var(--ink-soft);}
+.stat span{font-size:0.82rem;color:#C9A9B3;}
 @media(max-width:640px){
   .stat-row{grid-template-columns:repeat(2,1fr);}
 }
@@ -162,10 +171,10 @@ p.lead{
   padding:13px 24px;border-radius:999px;font-weight:700;font-size:0.96rem;
   text-decoration:none;transition:transform .15s,background .15s,color .15s;
 }
-.btn-primary{background:var(--wine);color:#fff;}
-.btn-primary:hover{background:var(--wine-deep);}
-.btn-ghost{border:1.5px solid var(--rule);color:var(--ink);}
-.btn-ghost:hover{border-color:var(--wine);color:var(--wine);}
+.btn-primary{background:#F0709A;color:#1B0F14;}
+.btn-primary:hover{background:#F7A9C4;}
+.btn-ghost{border:1.5px solid rgba(245,233,236,0.28);color:#F5E9EC;}
+.btn-ghost:hover{border-color:#F0709A;color:#F0709A;}
 
 /* ---------- Section shell ---------- */
 section.block{padding:64px 0;border-bottom:1px solid var(--rule);}
@@ -332,21 +341,6 @@ p.section-desc{color:var(--ink-soft);max-width:64ch;margin:0;}
 }
 .callout b{color:var(--wine);}
 
-/* ---------- Apply / footer CTA ---------- */
-.apply{
-  background:var(--wine);color:#fff;border-radius:22px;padding:44px 36px;margin-top:8px;
-}
-:root[data-theme="dark"] .apply, @media (prefers-color-scheme:dark){}
-.apply .eyebrow{color:#F6D9E4;}
-.apply h2{font-size:clamp(1.4rem,3vw,1.8rem);font-weight:800;margin:0 0 22px;color:#fff;}
-.apply-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px 32px;margin-bottom:28px;}
-@media(max-width:640px){.apply-grid{grid-template-columns:1fr;}}
-.apply-field dt{font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:#F1C3D5;margin-bottom:6px;font-weight:700;}
-.apply-field dd{margin:0;font-size:1rem;font-weight:600;}
-.apply-field dd.placeholder{border-bottom:1px dashed rgba(255,255,255,0.55);display:inline-block;padding-bottom:2px;}
-.apply .btn-primary{background:#fff;color:var(--wine);}
-.apply .btn-primary:hover{background:#F6D9E4;}
-
 footer.site{padding:36px 0 48px;text-align:center;color:var(--ink-soft);font-size:0.85rem;}
 footer.site .brand-name{font-size:0.95rem;}
 
@@ -358,18 +352,17 @@ footer.site .brand-name{font-size:0.95rem;}
 <header class="site">
   <div class="nav-row">
     <a class="brand" href="#top">
-      <span class="brand-univ">덕성여자대학교</span>
+      <img class="brand-logo" src="duksung womens logo.png" alt="덕성여자대학교 로고">
       <span class="brand-name">FactChat 교육</span>
     </a>
     <nav class="links">
       <a href="#overview">교육개요</a>
-      <a href="#credit-saving">무료요금제</a>
       <a href="#factchat">팩트챗</a>
+      <a href="#credit-saving">무료요금제</a>
       <a href="#curriculum">커리큘럼</a>
       <a href="#missions">실습미션</a>
-      <a href="#apply">신청안내</a>
     </nav>
-    <a class="nav-cta" href="#apply">신청하기</a>
+    <a class="nav-cta" href="#missions">실습 미션 보기</a>
   </div>
 </header>
 
@@ -377,19 +370,19 @@ footer.site .brand-name{font-size:0.95rem;}
 
   <section class="hero">
     <p class="eyebrow">덕성여자대학교 · 임직원·교수 대상 AI 활용 교육</p>
-    <h1 class="headline"><span class="num">60</span>분, 팩트챗으로 시작하는<br>AI 실무 교육</h1>
+    <h1 class="headline">60분, 팩트챗으로 시작하는<br><span class="hl">AI 실무 교육</span></h1>
     <p class="lead">이론은 짧게, 실습은 길게. 학교가 직접 운영하는 생성형 AI 플랫폼 <strong>팩트챗</strong>으로 보고서 작성부터 통계 데이터 분석까지, 오늘 바로 손에 익힙니다.</p>
 
     <div class="stat-row">
-      <div class="stat"><b>60분</b><span>총 교육 시간</span></div>
-      <div class="stat"><b>10:50</b><span>이론 : 실습 비율(분)</span></div>
-      <div class="stat"><b>3</b><span>실습 미션 수</span></div>
-      <div class="stat"><b>전체</b><span>대상 · 행정직원·교수</span></div>
+      <div class="stat"><b>⏱️ 60분</b><span>소요 시간</span></div>
+      <div class="stat"><b>🧩 3개</b><span>실습 미션</span></div>
+      <div class="stat"><b>👥 전 부서</b><span>임직원·교수 대상</span></div>
+      <div class="stat"><b>💻 노트북</b><span>학교 이메일 준비</span></div>
     </div>
 
     <div class="cta-row">
       <a class="btn btn-primary" href="#curriculum">60분 커리큘럼 보기</a>
-      <a class="btn btn-ghost" href="#apply">신청 방법 안내</a>
+      <a class="btn btn-ghost" href="#missions">실습 미션 3가지 미리보기</a>
     </div>
   </section>
 
@@ -403,36 +396,72 @@ footer.site .brand-name{font-size:0.95rem;}
     <div class="grid-4">
       <div class="card">
         <span class="tag">Goal</span>
-        <h3>교육 목표</h3>
+        <h3>🎯 교육 목표</h3>
         <p>팩트챗의 핵심 기능을 공문 작성, 회의록 정리, 통계 분석 등 실제 업무에 바로 적용할 수 있게 합니다.</p>
       </div>
       <div class="card">
         <span class="tag">Audience</span>
-        <h3>교육 대상</h3>
+        <h3>👥 교육 대상</h3>
         <p>전 부서 행정직원 및 전임·겸임 교수 전체. 사전 AI 사용 경험은 필요하지 않습니다.</p>
       </div>
       <div class="card">
         <span class="tag">Format</span>
-        <h3>진행 방식</h3>
-        <p>이론 강의 10분 + 실습 50분. 강사가 화면을 함께 보며 진행하는 핸즈온 방식입니다.</p>
+        <h3>📝 진행 방식</h3>
+        <p>이론은 짧게, 실습은 길게. 강사가 화면을 함께 보며 진행하는 핸즈온 방식입니다.</p>
       </div>
       <div class="card">
         <span class="tag">Prep</span>
-        <h3>준비물</h3>
+        <h3>💻 준비물</h3>
         <p>노트북(또는 교내 PC), 학교 이메일 계정, 팩트챗 로그인 정보를 미리 준비해 주세요.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="factchat">
+    <div class="section-head">
+      <p class="section-num">Chapter 2</p>
+      <h2 class="section-title">팩트챗, 무엇이 다른가요</h2>
+      <div class="rule-double"></div>
+      <p class="section-desc">팩트챗은 텍스트·이미지·영상 생성부터 국가통계 데이터 분석, 학교 자체 문서를 학습한 챗봇까지 — 덕성여자대학교가 자체 인프라로 안전하게 운영하는 통합 생성형 AI 플랫폼입니다.</p>
+    </div>
+    <div class="feature-grid">
+      <div class="feature">
+        <span class="n">01</span>
+        <h3>💬 멀티 LLM 채팅</h3>
+        <p>GPT, Claude, Gemini 등 최신 모델을 업무 목적에 맞게 골라 대화합니다.</p>
+      </div>
+      <div class="feature">
+        <span class="n">02</span>
+        <h3>🎨 미디어 생성</h3>
+        <p>텍스트 한 줄로 홍보용 이미지와 영상을 바로 만듭니다.</p>
+      </div>
+      <div class="feature">
+        <span class="n">03</span>
+        <h3>📊 통계 데이터 에이전트</h3>
+        <p>공공데이터를 자연어로 질의해 표와 그래프로 즉시 확인합니다.</p>
+      </div>
+      <div class="feature">
+        <span class="n">04</span>
+        <h3>🤖 기관 지식 챗봇</h3>
+        <p>학과·행정 문서를 최대 100개까지 학습시켜 우리 부서만의 챗봇을 만듭니다.</p>
+      </div>
+      <div class="feature">
+        <span class="n">05</span>
+        <h3>🔒 자체 인프라 운용</h3>
+        <p>외부 클라우드 없이 학교 시스템 안에서 안전하게 운영됩니다.</p>
       </div>
     </div>
   </section>
 
   <section class="block" id="credit-saving">
     <div class="section-head">
-      <p class="section-num">Chapter 2</p>
+      <p class="section-num">Chapter 3</p>
       <h2 class="section-title">토큰 0원! 무료 요금제 200% 활용법</h2>
       <div class="rule-double"></div>
       <p class="section-desc">ChatGPT · Claude · Gemini 모두 사용량(크레딧)을 소모하지 않는 무료 요금제를 제공합니다. 이 무료 모델만 잘 써도 반복 업무 대부분을 비용 없이 처리할 수 있습니다.</p>
     </div>
 
-    <h3 style="margin:0 0 0;font-size:1rem;font-weight:800;">먼저 · 무료로 쓸 수 있는 모델 확인하기</h3>
+    <h3 style="margin:0 0 0;font-size:1rem;font-weight:800;">🔍 먼저 · 무료로 쓸 수 있는 모델 확인하기</h3>
     <ol class="step-list">
       <li><span class="s-n">1</span><span>사용 중인 서비스(ChatGPT · Claude · Gemini)에서 모델 선택 메뉴를 엽니다.</span></li>
       <li><span class="s-n">2</span><span>무료 요금제로 제공되는 기본 모델(예: GPT-5 mini, Claude Haiku, Gemini 2.5 Flash 등)을 확인합니다.</span></li>
@@ -442,7 +471,7 @@ footer.site .brand-name{font-size:0.95rem;}
     <div class="credit-grid">
       <div class="credit-card">
         <span class="badge">무료 모델</span>
-        <h3>가벼운 범용 대화형</h3>
+        <h3>💬 가벼운 범용 대화형</h3>
         <p class="field-label">이런 일에 쓰세요</p>
         <p class="use-cases">짧은 질문, 맞춤법·표현 다듬기, 간단 요약, 아이디어 브레인스토밍, 형식 변환(표·불릿)</p>
         <p class="field-label">실무 예시</p>
@@ -453,7 +482,7 @@ footer.site .brand-name{font-size:0.95rem;}
       </div>
       <div class="credit-card">
         <span class="badge">무료 모델</span>
-        <h3>정리 · 초안형</h3>
+        <h3>📝 정리 · 초안형</h3>
         <p class="field-label">이런 일에 쓰세요</p>
         <p class="use-cases">개념 설명, 자료 구조화, 목차·초안 뼈대 잡기, 긴 글 1차 요약</p>
         <p class="field-label">실무 예시</p>
@@ -464,62 +493,26 @@ footer.site .brand-name{font-size:0.95rem;}
       </div>
     </div>
 
-    <h3 style="margin:36px 0 0;font-size:1rem;font-weight:800;">크레딧 절약 3단계 전략</h3>
+    <h3 style="margin:36px 0 0;font-size:1rem;font-weight:800;">💡 크레딧 절약 3단계 전략</h3>
     <div class="strategy-grid">
       <div class="strategy">
         <span class="s-tag">Step 1</span>
-        <h3>초안 · 반복작업은 무료 모델</h3>
+        <h3>🆓 초안 · 반복작업은 무료 모델</h3>
         <p>요약·초안·형식 변환·연습은 무료 모델로. 여기서 아무리 돌려도 추가 비용이 들지 않습니다.</p>
       </div>
       <div class="strategy">
         <span class="s-tag">Step 2</span>
-        <h3>정밀 검수만 상위 모델</h3>
+        <h3>🔎 정밀 검수만 상위 모델</h3>
         <p>최종 표현 다듬기, 민감한 판단, 정밀 팩트체크처럼 '품질이 중요한 마지막 단계'에서만 고성능 모델을 씁니다.</p>
       </div>
       <div class="strategy">
         <span class="s-tag">Step 3</span>
-        <h3>무료 결과를 붙여 '검수만' 요청</h3>
+        <h3>🔗 무료 결과를 붙여 '검수만' 요청</h3>
         <p>무료 모델이 만든 결과물을 상위 모델에 붙여넣고 "이 초안을 검수·보완해줘"라고 하면, 처음부터 다시 시킨 것보다 훨씬 효율적입니다.</p>
       </div>
     </div>
 
-    <p class="callout"><b>주의.</b> 무료 모델은 최신 정보·정밀도가 상위 모델보다 낮을 수 있습니다. 사내 공지·공식 문서에 나가는 사실·수치는 반드시 상위 모델과 담당자의 최종 확인(팩트체크)을 거치세요. 이미지·영상 생성은 텍스트 채팅과 달리 도구별로 별도의 무료 사용 한도(하루 생성 횟수 등)가 있는 경우가 많으니, 실습 전 사용 중인 도구의 무료 한도를 먼저 확인하세요.</p>
-  </section>
-
-  <section class="block" id="factchat">
-    <div class="section-head">
-      <p class="section-num">Chapter 3</p>
-      <h2 class="section-title">팩트챗, 무엇이 다른가요</h2>
-      <div class="rule-double"></div>
-      <p class="section-desc">팩트챗은 텍스트·이미지·영상 생성부터 국가통계 데이터 분석, 학교 자체 문서를 학습한 챗봇까지 — 덕성여자대학교가 자체 인프라로 안전하게 운영하는 통합 생성형 AI 플랫폼입니다.</p>
-    </div>
-    <div class="feature-grid">
-      <div class="feature">
-        <span class="n">01</span>
-        <h3>멀티 LLM 채팅</h3>
-        <p>GPT, Claude, Gemini 등 최신 모델을 업무 목적에 맞게 골라 대화합니다.</p>
-      </div>
-      <div class="feature">
-        <span class="n">02</span>
-        <h3>미디어 생성</h3>
-        <p>텍스트 한 줄로 홍보용 이미지와 영상을 바로 만듭니다.</p>
-      </div>
-      <div class="feature">
-        <span class="n">03</span>
-        <h3>통계 데이터 에이전트</h3>
-        <p>공공데이터를 자연어로 질의해 표와 그래프로 즉시 확인합니다.</p>
-      </div>
-      <div class="feature">
-        <span class="n">04</span>
-        <h3>기관 지식 챗봇</h3>
-        <p>학과·행정 문서를 최대 100개까지 학습시켜 우리 부서만의 챗봇을 만듭니다.</p>
-      </div>
-      <div class="feature">
-        <span class="n">05</span>
-        <h3>자체 인프라 운용</h3>
-        <p>외부 클라우드 없이 학교 시스템 안에서 안전하게 운영됩니다.</p>
-      </div>
-    </div>
+    <p class="callout"><b>⚠️ 주의.</b> 무료 모델은 최신 정보·정밀도가 상위 모델보다 낮을 수 있습니다. 사내 공지·공식 문서에 나가는 사실·수치는 반드시 상위 모델과 담당자의 최종 확인(팩트체크)을 거치세요. 이미지·영상 생성은 텍스트 채팅과 달리 도구별로 별도의 무료 사용 한도(하루 생성 횟수 등)가 있는 경우가 많으니, 실습 전 사용 중인 도구의 무료 한도를 먼저 확인하세요.</p>
   </section>
 
   <section class="block" id="curriculum">
@@ -534,7 +527,7 @@ footer.site .brand-name{font-size:0.95rem;}
         <div class="tl-time">00:00–00:10</div>
         <div class="tl-track"><div class="tl-dot"></div><div class="tl-line"></div></div>
         <div class="tl-content">
-          <h3>오리엔테이션</h3>
+          <h3>👋 오리엔테이션</h3>
           <p>팩트챗 로그인과 화면 구성을 함께 확인하고, 오늘 다룰 3가지 실습을 미리 살펴봅니다.</p>
         </div>
       </div>
@@ -542,7 +535,7 @@ footer.site .brand-name{font-size:0.95rem;}
         <div class="tl-time">00:10–00:20</div>
         <div class="tl-track"><div class="tl-dot"></div><div class="tl-line"></div></div>
         <div class="tl-content">
-          <h3>멀티 LLM 비교 실습</h3>
+          <h3>💬 멀티 LLM 비교 실습</h3>
           <p>같은 질문을 GPT·Claude·Gemini에 각각 던져보고, 답변의 차이를 비교합니다.</p>
         </div>
       </div>
@@ -550,7 +543,7 @@ footer.site .brand-name{font-size:0.95rem;}
         <div class="tl-time">00:20–00:30</div>
         <div class="tl-track"><div class="tl-dot"></div><div class="tl-line"></div></div>
         <div class="tl-content">
-          <h3>문서 업무 실습 — 미션 1</h3>
+          <h3>📄 문서 업무 실습 — 미션 1</h3>
           <p>학사 공지문을 팩트챗으로 작성해 보고, 문자 공지·게시판 공지 표현을 다듬습니다.</p>
         </div>
       </div>
@@ -558,7 +551,7 @@ footer.site .brand-name{font-size:0.95rem;}
         <div class="tl-time">00:30–00:40</div>
         <div class="tl-track"><div class="tl-dot"></div><div class="tl-line"></div></div>
         <div class="tl-content">
-          <h3>데이터 에이전트 실습 — 미션 2</h3>
+          <h3>📊 데이터 에이전트 실습 — 미션 2</h3>
           <p>통계청 자료로 학과 현황을 표와 그래프로 정리합니다.</p>
         </div>
       </div>
@@ -566,7 +559,7 @@ footer.site .brand-name{font-size:0.95rem;}
         <div class="tl-time">00:40–00:50</div>
         <div class="tl-track"><div class="tl-dot"></div><div class="tl-line"></div></div>
         <div class="tl-content">
-          <h3>기관 지식 챗봇 실습 — 미션 3</h3>
+          <h3>🤖 기관 지식 챗봇 실습 — 미션 3</h3>
           <p>학과 매뉴얼을 업로드해 부서 전용 챗봇을 만들고 직접 질문해 봅니다.</p>
         </div>
       </div>
@@ -574,7 +567,7 @@ footer.site .brand-name{font-size:0.95rem;}
         <div class="tl-time">00:50–01:00</div>
         <div class="tl-track"><div class="tl-dot"></div></div>
         <div class="tl-content">
-          <h3>정리 및 Q&amp;A</h3>
+          <h3>🙋 정리 및 Q&amp;A</h3>
           <p>오늘 배운 내용을 각자 업무에 어떻게 적용할지 나누고, 질의응답으로 마무리합니다.</p>
         </div>
       </div>
@@ -591,7 +584,7 @@ footer.site .brand-name{font-size:0.95rem;}
     <div class="mission-grid">
       <div class="mission">
         <span class="m-tag">Mission 1</span>
-        <h3>학사 공지문 다듬기</h3>
+        <h3>📢 학사 공지문 다듬기</h3>
         <p class="goal">학사 일정 소식을 문자 공지와 게시판 공지 2종으로 다듬어봅니다.</p>
         <ul class="checklist">
           <li>학사 일정 정보(안내명·기간·대상·문의처) 준비하기</li>
@@ -613,18 +606,18 @@ footer.site .brand-name{font-size:0.95rem;}
 
 — 일정·문의처 등 핵심 정보는 절대 누락하지 말 것</p></div>
         <button class="copy-btn" data-target="p1">프롬프트 복사</button>
-        <p class="warn"><b>주의.</b> 실습에서는 실제 미확정 일정이나 학생 개인정보(전화번호·이메일 등)를 입력하지 말고, 예시 정보로 연습한 뒤 학사팀 담당자의 최종 확인을 거치세요.</p>
+        <p class="warn"><b>⚠️ 주의.</b> 실습에서는 실제 미확정 일정이나 학생 개인정보(전화번호·이메일 등)를 입력하지 말고, 예시 정보로 연습한 뒤 학사팀 담당자의 최종 확인을 거치세요.</p>
       </div>
       <div class="mission">
         <span class="m-tag">Mission 2</span>
-        <h3>학과 통계표 만들기</h3>
+        <h3>📊 학과 통계표 만들기</h3>
         <p class="goal">공공데이터를 자연어 질의로 표·그래프까지 완성합니다.</p>
         <div class="prompt-box"><p id="p2">통계청 자료를 바탕으로 최근 5년간 여성 고용률 변화를 표와 꺾은선 그래프로 정리해줘</p></div>
         <button class="copy-btn" data-target="p2">프롬프트 복사</button>
       </div>
       <div class="mission">
         <span class="m-tag">Mission 3</span>
-        <h3>부서 매뉴얼 챗봇 만들기</h3>
+        <h3>🤖 부서 매뉴얼 챗봇 만들기</h3>
         <p class="goal">업로드한 문서만 학습한 우리 부서 전용 챗봇을 구성합니다.</p>
         <div class="prompt-box"><p id="p3">업로드한 학과 행정 매뉴얼을 기반으로, 신입 직원이 자주 묻는 질문에 답하는 챗봇을 만들어줘</p></div>
         <button class="copy-btn" data-target="p3">프롬프트 복사</button>
@@ -639,38 +632,12 @@ footer.site .brand-name{font-size:0.95rem;}
       <div class="rule-double"></div>
     </div>
     <div class="note-grid">
-      <div class="note"><span class="mark">·</span><p>학교 이메일 계정으로만 로그인할 수 있습니다.</p></div>
-      <div class="note"><span class="mark">·</span><p>개인정보·인사자료 등 민감한 정보는 입력하지 않습니다.</p></div>
-      <div class="note"><span class="mark">·</span><p>생성된 결과는 반드시 최종 검토 후 사용합니다.</p></div>
-      <div class="note"><span class="mark">·</span><p>문서 학습은 담당 부서 승인을 받은 뒤 업로드합니다.</p></div>
-      <div class="note"><span class="mark">·</span><p>질문에 배경·목적·형식을 함께 적으면 답변 품질이 좋아집니다.</p></div>
-      <div class="note"><span class="mark">·</span><p>교육이 끝난 뒤에도 언제든 접속해 이어서 연습할 수 있습니다.</p></div>
-    </div>
-  </section>
-
-  <section class="block" id="apply" style="border-bottom:none;padding-bottom:56px;">
-    <div class="apply">
-      <p class="eyebrow">신청 안내</p>
-      <h2>60분이면 충분합니다. 지금 신청하세요.</h2>
-      <div class="apply-grid">
-        <div class="apply-field">
-          <dt>일시</dt>
-          <dd class="placeholder">[YYYY.MM.DD(요일) HH:MM]</dd>
-        </div>
-        <div class="apply-field">
-          <dt>장소</dt>
-          <dd class="placeholder">[교육 장소 입력]</dd>
-        </div>
-        <div class="apply-field">
-          <dt>신청 방법</dt>
-          <dd class="placeholder">[신청 폼 링크 / 사내 공문 입력]</dd>
-        </div>
-        <div class="apply-field">
-          <dt>문의</dt>
-          <dd class="placeholder">[담당 부서 · 이메일 · 내선번호]</dd>
-        </div>
-      </div>
-      <a class="btn btn-primary" href="#">신청 폼 바로가기</a>
+      <div class="note"><span class="mark">🔐</span><p>학교 이메일 계정으로만 로그인할 수 있습니다.</p></div>
+      <div class="note"><span class="mark">🙅</span><p>개인정보·인사자료 등 민감한 정보는 입력하지 않습니다.</p></div>
+      <div class="note"><span class="mark">✅</span><p>생성된 결과는 반드시 최종 검토 후 사용합니다.</p></div>
+      <div class="note"><span class="mark">📁</span><p>문서 학습은 담당 부서 승인을 받은 뒤 업로드합니다.</p></div>
+      <div class="note"><span class="mark">💡</span><p>질문에 배경·목적·형식을 함께 적으면 답변 품질이 좋아집니다.</p></div>
+      <div class="note"><span class="mark">🔁</span><p>교육이 끝난 뒤에도 언제든 접속해 이어서 연습할 수 있습니다.</p></div>
     </div>
   </section>
 
