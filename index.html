@@ -343,6 +343,11 @@ p.section-desc{color:var(--ink-soft);max-width:64ch;margin:0;}
 
 footer.site{padding:36px 0 48px;text-align:center;color:var(--ink-soft);font-size:0.85rem;}
 footer.site .brand-name{font-size:0.95rem;}
+footer.site .footer-brand{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:14px;}
+footer.site .footer-brand .brand-logo{height:28px;}
+footer.site .footer-addr{margin:0 0 8px;}
+footer.site .footer-disclaimer{margin:0 0 18px;}
+footer.site .footer-copy{margin:0;opacity:0.7;}
 
 @media (prefers-reduced-motion: reduce){
   *{transition:none !important;}
@@ -644,8 +649,13 @@ footer.site .brand-name{font-size:0.95rem;}
 </main>
 
 <footer class="site">
-  <span class="brand-name" style="color:var(--wine);font-family:var(--font-display);font-weight:900;">FactChat 교육</span>
-  <p>주최 덕성여자대학교 · 문의 [담당 부서]</p>
+  <div class="footer-brand">
+    <img class="brand-logo" src="duksung womens logo.png" alt="덕성여자대학교 로고">
+    <span class="brand-name" style="color:var(--wine);font-family:var(--font-display);font-weight:900;">FactChat 교육</span>
+  </div>
+  <p class="footer-addr">덕성여자대학교 · 서울 도봉구 삼양로144길 33 (쌍문동, 덕성여자대학교)</p>
+  <p class="footer-disclaimer">본 페이지는 임직원·교수 대상 생성형 AI 실습 교육을 위해 제작된 교내 교육용 자료입니다.</p>
+  <p class="footer-copy">© 2026 Duksung Women's University. All rights reserved.</p>
 </footer>
 
 <script>
