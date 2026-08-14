@@ -344,19 +344,30 @@ p.section-desc{color:var(--ink-soft);max-width:64ch;margin:0;}
 }
 .callout b{color:var(--wine);}
 
-/* ---------- AI tool comparison ---------- */
-.compare-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px;}
-@media(max-width:900px){.compare-grid{grid-template-columns:1fr;}}
-.compare-card{
-  background:var(--paper-raised);border:1px solid var(--rule);border-radius:16px;
-  padding:24px 22px;display:flex;flex-direction:column;gap:14px;
+/* ---------- Prompt optimization (C.R.E.A.T.E.) ---------- */
+.create-box{
+  background:var(--wine-tint);border:1px solid var(--rule);border-radius:16px;
+  padding:24px 22px;margin-top:28px;
 }
-.compare-card .brand-row{display:flex;align-items:baseline;gap:8px;}
-.compare-card .dot{width:10px;height:10px;border-radius:50%;flex:none;}
-.compare-card .brand-name{font-size:1.08rem;font-weight:800;}
-.compare-card .brand-co{font-size:0.82rem;color:var(--ink-soft);}
-.compare-card .field-label{margin:0;font-size:0.76rem;font-weight:700;color:var(--ink-soft);letter-spacing:0.03em;text-transform:uppercase;}
-.compare-card .field-text{margin:0;font-size:0.9rem;color:var(--ink);line-height:1.6;}
+.create-box-label{margin:0 0 16px;font-size:0.82rem;font-weight:800;color:var(--wine);}
+.create-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+@media(max-width:640px){.create-grid{grid-template-columns:1fr;}}
+.create-item{background:var(--paper-raised);border-radius:12px;padding:14px 16px;}
+.create-item .create-key{margin:0 0 4px;font-size:0.86rem;font-weight:800;color:var(--wine);}
+.create-item .create-val{margin:0;font-size:0.88rem;color:var(--ink-soft);}
+.create-note{margin:20px 0 0;font-size:0.9rem;color:var(--ink-soft);}
+.create-prompt-box{
+  position:relative;margin-top:16px;background:#1B0F14;border:1px solid #3A2530;
+  border-radius:14px;padding:20px 96px 20px 20px;
+}
+.create-prompt-box p{margin:0;font-size:0.92rem;line-height:1.7;color:#F5E9EC;white-space:pre-line;}
+.create-prompt-box .placeholder{color:#F0709A;}
+.create-prompt-box .copy-btn{
+  position:absolute;top:16px;right:16px;margin-top:0;
+  border-color:#3A2530;color:#F0709A;
+}
+.create-prompt-box .copy-btn:hover{border-color:#F0709A;background:rgba(240,112,154,0.12);}
+.create-footnote{margin:16px 0 0;font-size:0.85rem;color:var(--ink-soft);}
 
 footer.site{padding:36px 0 48px;text-align:center;color:var(--ink-soft);font-size:0.85rem;}
 footer.site .brand-name{font-size:0.95rem;}
@@ -381,7 +392,7 @@ footer.site .footer-copy{margin:0;opacity:0.7;}
       <a href="#overview">교육개요</a>
       <a href="#factchat">팩트챗</a>
       <a href="#credit-saving">무료요금제</a>
-      <a href="#ai-compare">AI도구비교</a>
+      <a href="#prompt-tips">프롬프트 팁</a>
       <a href="#curriculum">커리큘럼</a>
       <a href="#missions">실습미션</a>
     </nav>
@@ -548,37 +559,36 @@ footer.site .footer-copy{margin:0;opacity:0.7;}
     <p class="callout"><b>⚠️ 주의.</b> 무료 모델은 최신 정보·정밀도가 상위 모델보다 낮을 수 있습니다. 교내 공지·공식 문서에 나가는 사실·수치는 반드시 상위 모델과 담당자의 최종 확인(팩트체크)을 거치세요. 이미지·영상 생성은 텍스트 채팅과 달리 도구별로 별도의 무료 사용 한도(하루 생성 횟수 등)가 있는 경우가 많으니, 실습 전 사용 중인 도구의 무료 한도를 먼저 확인하세요.</p>
   </section>
 
-  <section class="block" id="ai-compare">
+  <section class="block" id="prompt-tips">
     <div class="section-head">
       <p class="section-num">Chapter 4</p>
-      <h2 class="section-title">AI 도구 비교 — 무엇을 쓸까요?</h2>
+      <h2 class="section-title">프롬프트 최적화 방법</h2>
       <div class="rule-double"></div>
-      <p class="section-desc">세 가지 대표 생성형 AI의 강점과 업무별 추천 활용처를 비교해 보세요. 오늘 실습은 무료 요금제만으로 충분합니다.</p>
+      <p class="section-desc">C.R.E.A.T.E. 프레임워크 — Context · Role · Example · Action · Tone · Evaluation의 6단계로 누구나 좋은 질문을 만듭니다.</p>
     </div>
-    <div class="compare-grid">
-      <div class="compare-card">
-        <div class="brand-row"><span class="dot" style="background:#1BA672;"></span><span class="brand-name">ChatGPT</span><span class="brand-co">OpenAI</span></div>
-        <p class="field-label">강점</p>
-        <p class="field-text">범용성이 뛰어나고 아이디어 브레인스토밍, GPTs 확장 기능이 강점입니다.</p>
-        <p class="field-label">추천 업무</p>
-        <p class="field-text">행사 아이디어 정리, 공지문 초안 작성, 회의록 브레인스토밍</p>
-      </div>
-      <div class="compare-card">
-        <div class="brand-row"><span class="dot" style="background:var(--wine);"></span><span class="brand-name">Claude</span><span class="brand-co">Anthropic</span></div>
-        <p class="field-label">강점</p>
-        <p class="field-text">긴 문서를 정확히 이해하고, 안전하고 신중한 톤으로 정리해 줍니다.</p>
-        <p class="field-label">추천 업무</p>
-        <p class="field-text">평가 보고서 요약, 학사 규정·매뉴얼 교정, 교내 공문 정리</p>
-      </div>
-      <div class="compare-card">
-        <div class="brand-row"><span class="dot" style="background:#4285F4;"></span><span class="brand-name">Gemini</span><span class="brand-co">Google</span></div>
-        <p class="field-label">강점</p>
-        <p class="field-text">구글 워크스페이스와 연동이 편리하고 표·이미지 데이터 이해에 강합니다.</p>
-        <p class="field-label">추천 업무</p>
-        <p class="field-text">스프레드시트 통계자료 정리, 구글 문서 공동작업</p>
+
+    <div class="create-box">
+      <p class="create-box-label">6단계를 한 문장에 담으면</p>
+      <div class="create-grid">
+        <div class="create-item"><p class="create-key">C · 배경</p><p class="create-val">학적팀 안내문 관련</p></div>
+        <div class="create-item"><p class="create-key">R · 역할</p><p class="create-val">학적팀 행정직원</p></div>
+        <div class="create-item"><p class="create-key">E · 예시</p><p class="create-val">기존 안내문 초안 붙여넣기</p></div>
+        <div class="create-item"><p class="create-key">A · 지시</p><p class="create-val">3문단 · 800자 내외로 작성</p></div>
+        <div class="create-item"><p class="create-key">T · 톤</p><p class="create-val">정중하고 간결한 문체</p></div>
+        <div class="create-item"><p class="create-key">E · 검증</p><p class="create-val">신청 기간 · 제출 서류는 굵게 강조</p></div>
       </div>
     </div>
-    <p class="callout"><b>💳 크레딧 절약 팁.</b> 세 서비스 모두 무료 요금제로 채팅·챗봇 비교·자료 정리 미션을 전부 진행할 수 있습니다. 결과가 부족하면 프롬프트에 "표로 정리해줘", "3줄로 요약해줘"처럼 형식을 구체적으로 지정해 다시 시도해 보세요. 이미지·영상 생성은 도구마다 무료 지원 여부와 하루 생성 횟수가 달라, 실습 전 사용 중인 도구의 이미지·영상 생성 기능부터 확인해 보세요.</p>
+
+    <p class="create-note">위 6단계를 순서대로 이어 붙이면, 실무에 바로 쓸 수 있는 프롬프트가 완성됩니다.</p>
+
+    <div class="create-prompt-box">
+      <p id="create-prompt">당신은 덕성여자대학교 학적팀 행정직원입니다(R). 아래 안내문 초안을 참고해서(C·E) 재학생 대상 안내문을 3문단·800자 내외로 다시 써주되(A), 정중하고 간결한 문체를 유지하고(T), 신청 기간과 제출 서류는 굵게 강조해줘.(E)
+
+<span class="placeholder">[여기에 기존 안내문 초안을 붙여넣으세요]</span></p>
+      <button class="copy-btn" data-target="create-prompt">복사</button>
+    </div>
+
+    <p class="create-footnote">이 순서 그대로 문장을 채워 넣으면, 위 실습 미션 어디에나 바로 적용할 수 있는 프롬프트가 완성됩니다.</p>
   </section>
 
   <section class="block" id="curriculum">
