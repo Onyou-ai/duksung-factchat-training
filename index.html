@@ -218,9 +218,10 @@ p.section-desc{color:var(--ink-soft);max-width:64ch;margin:0;}
 .feature{
   background:var(--wine-tint);border-radius:14px;padding:22px 20px;
 }
-.feature .n{
-  font-family:var(--font-display);font-weight:900;font-size:1.7rem;color:var(--wine);
-  display:block;margin-bottom:10px;font-variant-numeric:tabular-nums;
+.feature .badge{
+  display:inline-block;font-size:0.68rem;font-weight:800;letter-spacing:0.04em;
+  text-transform:uppercase;color:#fff;padding:4px 10px;border-radius:999px;
+  margin-bottom:14px;
 }
 .feature h3{margin:0 0 6px;font-size:1rem;font-weight:800;}
 .feature p{margin:0;font-size:0.9rem;color:var(--ink-soft);}
@@ -444,33 +445,43 @@ footer.site .footer-copy{margin:0;opacity:0.7;}
       <p class="section-num">Chapter 2</p>
       <h2 class="section-title">팩트챗, 무엇이 다른가요</h2>
       <div class="rule-double"></div>
-      <p class="section-desc">팩트챗은 텍스트·이미지·영상 생성부터 국가통계 데이터 분석, 학교 자체 문서를 학습한 챗봇까지 — 덕성여자대학교가 자체 인프라로 안전하게 운영하는 통합 생성형 AI 플랫폼입니다.</p>
+      <p class="section-desc">팩트챗은 멀티 LLM 채팅과 Super Agent·Deep Research, 이미지·영상 생성, 회의록 자동화, 발표자료 생성, 통계 데이터 분석, 기관 지식챗봇까지 — 덕성여자대학교가 자체 인프라로 안전하게 운영하는 통합 생성형 AI 플랫폼입니다.</p>
     </div>
     <div class="feature-grid">
       <div class="feature">
-        <span class="n">01</span>
+        <span class="badge" style="background:#7C5CFC;">Multi-LLM</span>
         <h3>💬 멀티 LLM 채팅</h3>
-        <p>GPT, Claude, Gemini 등 최신 모델을 업무 목적에 맞게 골라 대화합니다.</p>
+        <p>GPT, Claude, Gemini 등 최신 모델을 상황에 맞게 골라 쓰고, 답변을 서로 비교해볼 수 있습니다.</p>
       </div>
       <div class="feature">
-        <span class="n">02</span>
-        <h3>🎨 미디어 생성</h3>
-        <p>텍스트 한 줄로 홍보용 이미지와 영상을 바로 만듭니다.</p>
+        <span class="badge" style="background:#0EA5A0;">Agent</span>
+        <h3>🧠 Super Agent · Deep Research</h3>
+        <p>한 번의 요청으로 검색·분석·문서·이미지·PPT까지 끝내는 Super Agent와, 깊이 있는 조사 후 보고서를 작성하는 Deep Research.</p>
       </div>
       <div class="feature">
-        <span class="n">03</span>
-        <h3>📊 통계 데이터 에이전트</h3>
-        <p>공공데이터를 자연어로 질의해 표와 그래프로 즉시 확인합니다.</p>
+        <span class="badge" style="background:#EC4899;">Media</span>
+        <h3>🎨 이미지·영상 생성</h3>
+        <p>텍스트 설명만으로 학과 홍보물, 행사 포스터에 쓸 이미지와 짧은 영상을 만들 수 있습니다.</p>
       </div>
       <div class="feature">
-        <span class="n">04</span>
-        <h3>🤖 기관 지식 챗봇</h3>
-        <p>학과·행정 문서를 최대 100개까지 학습시켜 우리 부서만의 챗봇을 만듭니다.</p>
+        <span class="badge" style="background:#E23744;">Meeting</span>
+        <h3>🎙️ 회의록 자동화</h3>
+        <p>녹음 파일을 업로드하면 전사 → 화자 분리 → 요약까지 자동으로 처리됩니다.</p>
       </div>
       <div class="feature">
-        <span class="n">05</span>
-        <h3>🔒 자체 인프라 운용</h3>
-        <p>외부 클라우드 없이 학교 시스템 안에서 안전하게 운영됩니다.</p>
+        <span class="badge" style="background:#D9A404;">Document</span>
+        <h3>📄 발표자료 생성 · HWP 편집기</h3>
+        <p>개요만 입력하면 발표자료(PPT) 초안을 만들어주고, HWP 문서 편집기로 바로 다듬을 수 있습니다.</p>
+      </div>
+      <div class="feature">
+        <span class="badge" style="background:#2F6FED;">Data Agent</span>
+        <h3>📊 데이터 에이전트 3종</h3>
+        <p>학사 통계(Univ-in-Data), 법률·규정(Law-in-Data), 지역 통계(Korea-in-Data)를 자연어로 질의하고 시각화합니다.</p>
+      </div>
+      <div class="feature">
+        <span class="badge" style="background:#FB923C;">Knowledge Bot</span>
+        <h3>🤖 기관 지식챗봇 · 챗봇 스튜디오</h3>
+        <p>내부 문서 최대 100개를 학습시켜 학과·부서 전용 챗봇을 만들고, 스튜디오에서 제작·배포·공유까지 관리합니다.</p>
       </div>
     </div>
   </section>
